@@ -1,0 +1,68 @@
+baseURL: "https://keqizeng.github.io/"
+languageCode: en-us
+title: Ketch's Blog
+theme: PaperMod
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+markup:
+  highlight:
+    lineNos: true
+    lineNumbersInTable: false
+    noClasses: false
+    tabWidth: 4
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      tag: tags
+    params:
+      homeInfoParams:
+        Title: Hi there 👋
+        Content: Welcome to my blog! My name is Keqi Zeng, you can also call me Ketch. I'm a master student of TU Darmstadt 🇩🇪, major in Robotics.
+
+    menu:
+      main:
+        - name: 📚 Archive
+          url: archives/
+          weight: 1
+        - name: 🏷️ Tags
+          url: tags/
+          weight: 2
+        - name: 📝 About
+          url: about/
+          weight: 3
+        - name: 🔍
+          url: search/
+          weight: 4
+
+params:
+  defaultTheme: auto # to switch between dark or light according to browser theme
+  author: Ketch
+  DateFormat: "2006-01-02"
+  socialIcons:
+    - name: github
+      url: https://github.com/KeqiZeng
+    - name: email
+      url: mailto:ketchz0206@outlook.com
+
+  math: true
+  enableEmoji: true
+  enableGitInfo: true
+  ShowWordCount: true
+  ShowReadingTime: true
+  ShowToc: true
+  TocOpen: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
