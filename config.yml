@@ -20,6 +20,7 @@ languages:
     weight: 1
     taxonomies:
       tag: tags
+      series: series
     params:
       homeInfoParams:
         Title: Hi there 👋
