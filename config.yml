@@ -9,7 +9,7 @@ minify:
 
 markup:
   highlight:
-    lineNos: true
+    lineNos: false
     lineNumbersInTable: false
     noClasses: false
     tabWidth: 4
