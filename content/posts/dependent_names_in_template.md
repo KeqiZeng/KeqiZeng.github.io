@@ -68,9 +68,9 @@ int main() {
 }
 ```
 
-At points [1] and [2], `this->foo(1.0)` and `this->foo(1)` are dependent names because `this` depends on template `X`. The name lookup occurs during Y's template instantiation point. At this point, the member functions `foo` and their overloads from `X` become visible, and the best match is selected based on overload resolution rules.
+At points `[1]` and `[2]`, `this->foo(1.0)` and `this->foo(1)` are dependent names because `this` depends on template `X`. The name lookup occurs during Y's template instantiation point. At this point, the member functions `foo` and their overloads from `X` become visible, and the best match is selected based on overload resolution rules.
 
-At points [3] and [4], `foo(1.0)` and `foo(1)` are non-dependent names since they do not depend on any template parameters. The name lookup happens at Y's template definition point. At this point, the member functions `foo` are not visible in either `Y` or `X`. Only the function `foo(double)` at point [5] is visible and will be bound. Even though a better matching function `foo(int)` at point [6] becomes visible during template instantiation, the binding of `foo(1)` at point [4] remains unchanged.
+At points `[3]` and `[4]`, `foo(1.0)` and `foo(1)` are non-dependent names since they do not depend on any template parameters. The name lookup happens at Y's template definition point. At this point, the member functions `foo` are not visible in either `Y` or `X`. Only the function `foo(double)` at point `[5]` is visible and will be bound. Even though a better matching function `foo(int)` at point `[6]` becomes visible during template instantiation, the binding of `foo(1)` at point `[4]` remains unchanged.
 
 Output:
 
@@ -108,10 +108,10 @@ int main() {
 
 The code above will fail to compile for the following reasons:
 
-- At point [1], `type` is a non-dependent name. The name lookup is performed at Y's template definition point, where `type` is not yet known as a type name.
-- At point [2], `X<T>::type` is a dependent type name and becomes visible at Y's template instantiation point. However, without `typename`, the compiler cannot determine if it refers to a type or a static member.
+- At point `[1]`, `type` is a non-dependent name. The name lookup is performed at Y's template definition point, where `type` is not yet known as a type name.
+- At point `[2]`, `X<T>::type` is a dependent type name and becomes visible at Y's template instantiation point. However, without `typename`, the compiler cannot determine if it refers to a type or a static member.
 
-The correct approach is to use the `typename` keyword as shown at point [3].
+The correct approach is to use the `typename` keyword as shown at point `[3]`.
 
 In C++20, the `typename` keyword can be implicitly deduced by the compiler in the following contexts:
 
